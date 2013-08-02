@@ -5,9 +5,6 @@
 # Constants
 CONF_PATH="../conf/";
 
-# Config
-SERVER_DOMAIN=$(cat "$(dirname $0)/${CONF_PATH}webmaster");
-
 # Params
 username=$1
 domain=$2

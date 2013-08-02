@@ -47,7 +47,8 @@ server.ewk. IN A 192.168.1.202
 ns.ewk. IN A 192.168.1.202
 ;sdns.ewk. IN A 192.168.1.202
 router.ewk. IN A 192.168.1.5
-nas.ewk. IN A 192.168.1.206" > /etc/bind/db.ewk
+printer.ewk. IN A 192.168.1.6
+nas.ewk. IN A 192.168.1.7" > /etc/bind/db.ewk
 
 	echo "//
 // Do any local configuration here
