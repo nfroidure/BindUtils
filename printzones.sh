@@ -15,16 +15,12 @@ if [ "$print" = "" ]; then
 	exit
 fi
 
-echo "Emptying zone file"
-echo "//Here goes production zones;
-" >> /etc/bind/named.conf.production
-
 echo "Re-printing zones"
 while read username domain devonly
 do
 	if [ "$devonly" == "yes" -a "prod" == "$print" ]; then
 		echo "$domain : Skipping "
 	else
-		$(dirname $0)/printzone.sh $domain
+		$(dirname $0)/printzone.sh $domain $username
 	fi
 done < $(dirname $0)/${CONF_PATH}domains.db

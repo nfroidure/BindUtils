@@ -15,8 +15,15 @@ options {
         // };
 
         auth-nxdomain no;    # conform to RFC1035
-        listen-on-v6 { ::1; };
-        listen-on { 127.0.0.1; };
+        listen-on-v6 { any; };
+        listen-on { any; };
+				// Anyone can query the ns server
+        allow-query { any; };
+				// only local can do recursion or cache
         allow-recursion { 127.0.0.1; };
+        allow-query-cache { 127.0.0.1; };
+        // only sdns can transfer
+        allow-transfer { 213.251.188.140; };
+
 };
 

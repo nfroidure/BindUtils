@@ -21,6 +21,12 @@ echo "//Here goes production zones;
 echo "
 include \"/etc/bind/named.conf.production\";" >> /etc/bind/named.conf
 
+echo "Adding reverse IP"
+echo "//Here goes reverse IP zones;
+" >> /etc/bind/named.conf.reverseip
+echo "
+include \"/etc/bind/named.conf.reverseip\";" >> /etc/bind/named.conf
+
 
 if [ "$fordev" = "yes" ]; then
 	echo "Setting local zones"

@@ -9,13 +9,16 @@ $ttl 86400
 				IN		NS		{domain.sdns}.
 				IN		MX		10 mail.{domain.name}.
 				IN		A		{domain.ip}
+				IN		AAAA {domain.ip6}
 www				IN		A		{domain.ip}
-mail				IN		A		{domain.ip}
-smtp				IN		A		{domain.ip}
-pop				IN		A		{domain.ip}
-pop3				IN		A		{domain.ip}
-imap				IN		A		{domain.ip}
+www				IN		AAAA {domain.ip6}
+mail				IN		A		{domain.mail}
+smtp				IN		A		{domain.mail}
+pop				IN		A		{domain.mail}
+pop3				IN		A		{domain.mail}
+imap				IN		A		{domain.mail}
 sql				IN		A		{domain.ip}
 mysql				IN		A		{domain.ip}
 *				IN		A		{domain.ip}
-				IN		TXT		"v=spf1 a mx ip4:{domain.ip} include:orange.fr include:wanadoo.fr include:free.fr ~all"
+				IN		TXT		"v=spf1 a mx ip4:{domain.mail} include:orange.fr include:wanadoo.fr include:free.fr ~all"
+
