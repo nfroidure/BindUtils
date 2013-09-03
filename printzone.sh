@@ -21,7 +21,7 @@ domain=$1
 username=$2
 
 # Help
-if [ "$domain" = "" ]; then
+if [ "$domain" = "" ] || [ "$username" = "" ]; then
 	echo "$(basename $0) 1:domain 2:username"
 	exit
 fi
