@@ -15,6 +15,27 @@ echo "$(basename $0) 1:fordev(yes|no)";
 exit;
 fi
 
+echo "Settings"
+if [ "$fordev" = "yes" ]; then
+	hostname=$(cat $CONF_PATHdevserver)
+else
+	hostname=$(cat $CONF_PATHprodserver)
+fi
+if [ $hostname = "" ]; then
+	hostname=$(cat /etc/hostname)
+fi
+
+echo "Please give me the server hostname (default: $hostname)"
+read hostname2
+if [ $hostname2 != "" ]; then
+	hostname=$hostname2
+fi
+hostip=$(cat /home/elitwork/shell/conf/prodserver)
+
+echo "Saving $hostname [$hostip]"
+echo $hostname > "$CONF_PATH"
+echo $hostip > "$CONF_PATHip"
+
 echo "Adding production zones"
 echo "//Here goes production zones;
 " >> /etc/bind/named.conf.production

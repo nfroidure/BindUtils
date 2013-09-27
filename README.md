@@ -2,10 +2,12 @@ This shell scripts are designed to allow some basic Bind9 administration operati
 
 # Config
 Set the config path in the *.sh files. And do in the config folder :
+```sh
 echo "serverip" > ip;
 echo "pridns.server.com" > dns;
 echo "secns.server.com" > sdns;
 echo "serverdomain" > domain; # This is for local server only
+```
 
 # Scripts
 createdomain.sh : Add a domain to the server domain
